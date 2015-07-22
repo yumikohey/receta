@@ -874,3 +874,680 @@ Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae4
 
 
 Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for ::1 at 2015-07-21 22:28:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20150722055704)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (86.1ms)[0m  [1mCREATE TABLE "recipes" ("id" serial primary key, "name" character varying, "instructions" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+PG::DuplicateTable: ERROR:  relation "recipes" already exists
+: CREATE TABLE "recipes" ("id" serial primary key, "name" character varying, "instructions" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20150722055704)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "recipes" ("id" serial primary key, "name" character varying, "instructions" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150722055704"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-22 01:11:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 381ms (Views: 372.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home-5d4c747d0ca343eeafa07a7e0d76f30f.css?body=1" for 127.0.0.1 at 2015-07-22 01:11:22 -0700
+
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/application-95c3b31bab59e9e99ae35c7d4e2849b0.css?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/app-d3db9bccfd35ba45f7e5d966d3cc5fc8.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+
+
+Started GET "/assets/application-20bdc18983cf2bcab5cb9326cd17d33f.js?body=1" for 127.0.0.1 at 2015-07-22 01:11:23 -0700
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 51895)
+TCPServer.new(::1, 51895)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=4897 port=51895
+accept: 127.0.0.1:51899
+close: 127.0.0.1:51899
+accept: 127.0.0.1:51904
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:25:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (1244.2ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.5ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (1379.1ms)
+Completed 200 OK in 1448ms (Views: 1439.7ms | ActiveRecord: 0.0ms)
+Rack::Handler::WEBrick is invoked.
+
+
+accept: 127.0.0.1:51905
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+accept: 127.0.0.1:51907
+Rack::Handler::WEBrick is invoked.
+accept: 127.0.0.1:51906
+
+
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+accept: 127.0.0.1:51908
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+accept: 127.0.0.1:51909
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+
+Started GET "/assets/spec_helper-3130dbaaa146387448be03d0ee9c1604.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-aab05171cb1d7fbfc23b05c2404e7f62.js?body=1" for 127.0.0.1 at 2015-07-22 01:25:23 -0700
+close: 127.0.0.1:51904
+close: 127.0.0.1:51905
+close: 127.0.0.1:51907
+close: 127.0.0.1:51909
+close: 127.0.0.1:51906
+close: 127.0.0.1:51908
+going to shutdown ...
+WEBrick::HTTPServer#start done.
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 51910)
+TCPServer.new(::1, 51910)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=4947 port=51910
+accept: 127.0.0.1:51914
+close: 127.0.0.1:51914
+accept: 127.0.0.1:51917
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:26:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (1040.7ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.3ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (1128.4ms)
+Completed 200 OK in 1148ms (Views: 1137.8ms | ActiveRecord: 0.0ms)
+Rack::Handler::WEBrick is invoked.
+
+
+accept: 127.0.0.1:51918
+accept: 127.0.0.1:51919
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+accept: 127.0.0.1:51921
+accept: 127.0.0.1:51920
+accept: 127.0.0.1:51922
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/spec_helper-3130dbaaa146387448be03d0ee9c1604.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-8d1a19e75b508b1e6d523a8077224a14.js?body=1" for 127.0.0.1 at 2015-07-22 01:26:03 -0700
+close: 127.0.0.1:51918
+close: 127.0.0.1:51921
+close: 127.0.0.1:51922
+close: 127.0.0.1:51920
+close: 127.0.0.1:51919
+close: 127.0.0.1:51917
+going to shutdown ...
+WEBrick::HTTPServer#start done.
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 51944)
+TCPServer.new(::1, 51944)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=5042 port=51944
+accept: 127.0.0.1:51948
+close: 127.0.0.1:51948
+accept: 127.0.0.1:51949
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:27:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (892.0ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.3ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (943.1ms)
+Completed 200 OK in 959ms (Views: 949.9ms | ActiveRecord: 0.0ms)
+Rack::Handler::WEBrick is invoked.
+
+
+accept: 127.0.0.1:51952
+accept: 127.0.0.1:51950
+accept: 127.0.0.1:51951
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+accept: 127.0.0.1:51953
+accept: 127.0.0.1:51954
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/spec_helper-3130dbaaa146387448be03d0ee9c1604.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-8d1a19e75b508b1e6d523a8077224a14.js?body=1" for 127.0.0.1 at 2015-07-22 01:27:29 -0700
+close: 127.0.0.1:51949
+close: 127.0.0.1:51950
+close: 127.0.0.1:51952
+close: 127.0.0.1:51954
+close: 127.0.0.1:51951
+close: 127.0.0.1:51953
+going to shutdown ...
+WEBrick::HTTPServer#start done.
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 51958)
+TCPServer.new(::1, 51958)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=5119 port=51958
+accept: 127.0.0.1:51962
+close: 127.0.0.1:51962
+accept: 127.0.0.1:51963
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:28:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (829.6ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.3ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (864.1ms)
+Completed 200 OK in 876ms (Views: 868.7ms | ActiveRecord: 0.0ms)
+accept: 127.0.0.1:51964
+accept: 127.0.0.1:51965
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+accept: 127.0.0.1:51968
+accept: 127.0.0.1:51966
+accept: 127.0.0.1:51967
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+Rack::Handler::WEBrick is invoked.
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Started GET "/assets/spec_helper-3130dbaaa146387448be03d0ee9c1604.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-8d1a19e75b508b1e6d523a8077224a14.js?body=1" for 127.0.0.1 at 2015-07-22 01:28:40 -0700
+close: 127.0.0.1:51963
+close: 127.0.0.1:51964
+close: 127.0.0.1:51966
+close: 127.0.0.1:51968
+close: 127.0.0.1:51965
+close: 127.0.0.1:51967
+going to shutdown ...
+WEBrick::HTTPServer#start done.
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 51979)
+TCPServer.new(::1, 51979)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=5258 port=51979
+accept: 127.0.0.1:51983
+close: 127.0.0.1:51983
+accept: 127.0.0.1:51984
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:30:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (1544.9ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.4ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (1589.9ms)
+Completed 200 OK in 1607ms (Views: 1596.7ms | ActiveRecord: 0.0ms)
+accept: 127.0.0.1:51985
+accept: 127.0.0.1:51986
+accept: 127.0.0.1:51987
+accept: 127.0.0.1:51988
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+accept: 127.0.0.1:51989
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Rack::Handler::WEBrick is invoked.
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-mocks/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+Rack::Handler::WEBrick is invoked.
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/spec_helper-3130dbaaa146387448be03d0ee9c1604.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-8d1a19e75b508b1e6d523a8077224a14.js?body=1" for 127.0.0.1 at 2015-07-22 01:30:46 -0700
+close: 127.0.0.1:51987
+close: 127.0.0.1:51984
+close: 127.0.0.1:51988
+close: 127.0.0.1:51986
+close: 127.0.0.1:51985
+close: 127.0.0.1:51989
+going to shutdown ...
+WEBrick::HTTPServer#start done.
+WEBrick 1.3.1
+ruby 2.0.0 (2013-11-22) [x86_64-darwin14.0.0]
+TCPServer.new(127.0.0.1, 52087)
+TCPServer.new(::1, 52087)
+Rack::Handler::WEBrick is mounted on /.
+WEBrick::HTTPServer#start: pid=5494 port=52087
+accept: 127.0.0.1:52091
+close: 127.0.0.1:52091
+accept: 127.0.0.1:52092
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/teaspoon/default?reporter=Console" for 127.0.0.1 at 2015-07-22 01:43:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Teaspoon::SuiteController#show as HTML
+  Parameters: {"reporter"=>"Console", "suite"=>"default"}
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_boot.html.erb (1366.9ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/_body.html.erb (0.6ms)
+  Rendered /Users/yumiko/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/teaspoon-1.0.2/app/views/teaspoon/suite/show.html.erb (1480.4ms)
+Completed 200 OK in 1497ms (Views: 1487.9ms | ActiveRecord: 0.0ms)
+Rack::Handler::WEBrick is invoked.
+
+accept: 127.0.0.1:52093
+
+accept: 127.0.0.1:52094
+Started GET "/assets/teaspoon-429d1c678ef2a80a6b908ac6477f3331.css?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+accept: 127.0.0.1:52095
+accept: 127.0.0.1:52096
+accept: 127.0.0.1:52097
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/teaspoon-jasmine2-3ad292109fb9f6765cf43ab1f3358ab0.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/support/bind-poly-c6b6261dc60ce3845034620250d6dc82.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/jasmine/2.2.0-365e4c59a9bcb0913b529e04f2540c88.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery_ujs-42d8e48dd9e1eacc12ddcb51e37c1069.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/jquery-0e6a23412defed83698f9b57cd5e9924.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-37fa0f3986f5f5fc959c5f2f6aed27cd.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-animate-7fe29965b52222bf3e2c0174d19fde05.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/angular-resource-1a04c73fd1d72ef6d502785602d4ad41.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-route/angular-route-da2b148d915a6af2db2b7c39fd91ae44.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/angular-rails-templates-1643e058dc216804a6a2db193cfa8cb9.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/app-6a08fca4d47875d60beef21d6c50fce2.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+Rack::Handler::WEBrick is invoked.
+
+
+Started GET "/assets/templates/index-dc4d9f3fce0ea4ef771da36de78896b7.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/application-e2a951b99b7ffc8f7168cf2819a02b21.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/angular-mocks/angular-mocks-8b2b6da05532649b62db81f700fea2a0.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/spec_helper-2821b888154eda5dbfea022205ac3f62.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+
+
+Started GET "/assets/controllers/RecipesController_spec-8d1a19e75b508b1e6d523a8077224a14.js?body=1" for 127.0.0.1 at 2015-07-22 01:43:57 -0700
+close: 127.0.0.1:52093
+close: 127.0.0.1:52092
+close: 127.0.0.1:52095
+close: 127.0.0.1:52096
+close: 127.0.0.1:52094
+close: 127.0.0.1:52097
+going to shutdown ...
+WEBrick::HTTPServer#start done.
