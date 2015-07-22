@@ -1,0 +1,2 @@
+# receta
+AngularJS on Rails
